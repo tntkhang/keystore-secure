@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="10dp"
+    tools:context="com.github.khangtran.keystoresecuredemo.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_input_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/btn_save_1"
+            android:hint="@string/input_user_name"
+            android:layout_alignBaseline="@id/btn_save_1"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btn_save_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/save_value_1"/>
+        <TextView
+            android:id="@+id/tv_value_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_demo"
+            android:layout_below="@id/edt_input_1"
+            android:layout_toStartOf="@id/btn_get_1"
+            android:layout_alignBaseline="@id/btn_get_1"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btn_get_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/btn_save_1"
+            android:text="@string/get_value_1"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/edt_input_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/btn_save_2"
+            android:hint="@string/input_user_name"
+            android:layout_alignBaseline="@id/btn_save_2"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btn_save_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/save_value_1"/>
+        <TextView
+            android:id="@+id/tv_value_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_demo"
+            android:layout_below="@id/edt_input_2"
+            android:layout_toStartOf="@id/btn_get_2"
+            android:layout_alignBaseline="@id/btn_get_2"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btn_get_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/btn_save_2"
+            android:text="@string/get_value_1"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

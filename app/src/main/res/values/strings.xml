@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KeystoreSecure</string>
+    <string name="get_value_1">Get</string>
+    <string name="save_value_1">Save</string>
+    <string name="input_user_name">Value to save...</string>
+    <string name="hello_demo">Hello !</string>
+</resources>
