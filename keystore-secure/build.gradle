@@ -2,20 +2,20 @@ apply plugin: 'com.android.library'
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'realm-encryption-helper'   // Has to be same as your library module name
+    bintrayName = 'keystore-secure'   // Has to be same as your library module name
 
     publishedGroupId = 'com.github.tntkhang'
-    libraryName = 'realm-encryption-helper'
-    artifact = 'realm-encryption-helper'     // Has to be same as your library module name
+    libraryName = 'keystore-secure'
+    artifact = 'keystore-secure'     // Has to be same as your library module name
 
-    libraryDescription = 'Android Library to Encrypt and Decrypt realm key'
+    libraryDescription = 'Android Library to Encrypt and Decrypt data and store to KeyStore'
 
     // Your github repo link
-    siteUrl = 'https://github.com/tntkhang/realm-encryption-helper'
-    gitUrl = 'https://github.com/tntkhang/realm-encryption-helper.git'
-    githubRepository= 'tntkhang/realm-encryption-helper'
+    siteUrl = 'https://github.com/tntkhang/keystore-secure'
+    gitUrl = 'https://github.com/tntkhang/keystore-secure.git'
+    githubRepository= 'tntkhang/keystore-secure'
 
-    libraryVersion = '1.0.2'
+    libraryVersion = '1.0.0'
 
     developerId = 'tntkhang'
     developerName = 'KhangTran'
