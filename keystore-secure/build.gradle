@@ -15,7 +15,7 @@ ext {
     gitUrl = 'https://github.com/tntkhang/keystore-secure.git'
     githubRepository= 'tntkhang/keystore-secure'
 
-    libraryVersion = '1.1.0'
+    libraryVersion = '1.1.1'
 
     developerId = 'tntkhang'
     developerName = 'KhangTran'
@@ -32,8 +32,8 @@ android {
     defaultConfig {
         minSdkVersion 18
         targetSdkVersion 26
-        versionCode 4
-        versionName "1.1.0"
+        versionCode 5
+        versionName "1.1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
