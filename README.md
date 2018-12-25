@@ -1,6 +1,6 @@
 # Keystore Secure
 
-[ ![Download](https://api.bintray.com/packages/tntkhang/maven/keystore-secure/images/download.svg?version=1.1.0) ](https://bintray.com/tntkhang/maven/keystore-secure/1.1.0/link)
+[ ![Download](https://api.bintray.com/packages/tntkhang/maven/keystore-secure/images/download.svg?version=1.1.1) ](https://bintray.com/tntkhang/maven/keystore-secure/1.1.1/link)
 
 This is an lightweight library for save and get data secure into the Keystore which encrypted and decrypted.
 
@@ -9,7 +9,7 @@ This is an lightweight library for save and get data secure into the Keystore wh
 ### Add implementation into build.gradle of app level
 
 `
-implementation 'com.github.tntkhang:keystore-secure:1.1.0'
+implementation 'com.github.tntkhang:keystore-secure:1.1.1'
 `
 ### How to use it
 
