@@ -12,7 +12,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         // Config RealmEncryptionHelper
-//        RealmEncryptionHelper realmEncryptionHelper = RealmEncryptionHelper.initHelper(this, getString(R.string.app_name));
+//        RealmEncryptionHelper realmEncryptionHelper = RealmEncryptionHelper.init(this, getString(R.string.app_name));
 //
 //        // Config Realm
 //        Realm.init(this);

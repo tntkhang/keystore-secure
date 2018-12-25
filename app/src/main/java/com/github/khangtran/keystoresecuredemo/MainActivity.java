@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edtInput2;
     private Button btnDecrypt2;
     private Button btnEncypt2;
-    private KeystoreSecure keystoreSecure;
+
     private static final String STORE_KEY_1 = "STORE_KEY_1";
     private static final String STORE_KEY_2 = "STORE_KEY_2";
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        keystoreSecure = KeystoreSecure.initHelper(getApplicationContext());
+        KeystoreSecure.init(getApplicationContext());
 
         tvValue1 = findViewById(R.id.tv_value_1);
         btnDecrypt1 = findViewById(R.id.btn_get_1);
@@ -41,27 +41,27 @@ public class MainActivity extends AppCompatActivity {
         btnDecrypt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String key = keystoreSecure.decypt(STORE_KEY_1);
+                String key = KeystoreSecure.decrypt(STORE_KEY_1);
                 tvValue1.setText(key);
             }
         });
         btnEncypt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                keystoreSecure.encypt(STORE_KEY_1, edtInput1.getText().toString());
+                KeystoreSecure.encrypt(getApplicationContext(), STORE_KEY_1, edtInput1.getText().toString());
             }
         });
         btnDecrypt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String key = keystoreSecure.decypt(STORE_KEY_2);
+                String key = KeystoreSecure.decrypt(STORE_KEY_2);
                 tvValue2.setText(key);
             }
         });
         btnEncypt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                keystoreSecure.encypt(STORE_KEY_2, edtInput2.getText().toString());
+                KeystoreSecure.encrypt(getApplicationContext(), STORE_KEY_2, edtInput2.getText().toString());
             }
         });
     }

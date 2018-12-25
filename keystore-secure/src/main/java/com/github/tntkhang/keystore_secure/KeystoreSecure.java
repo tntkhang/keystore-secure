@@ -29,16 +29,15 @@ import khangtran.preferenceshelper.PrefHelper;
 
 public class KeystoreSecure {
     private static KeystoreSecure instance;
-    private Context mContext;
 
     private static final boolean IS_M = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
 
     private static final String ANDROID_KEY_STORE = "AndroidKeyStore";
     private static final String RSA_MODE =  "RSA/ECB/PKCS1Padding";
 
-    private KeyStore keyStore;
+    private static KeyStore keyStore;
 
-    public static KeystoreSecure initHelper(Context context) {
+    public static KeystoreSecure init(Context context) {
         if (instance == null) {
             instance = new KeystoreSecure(context);
         }
@@ -46,11 +45,10 @@ public class KeystoreSecure {
     }
 
     private KeystoreSecure(Context context) {
-        this.mContext = context;
         PrefHelper.initHelper(context);
     }
 
-    public void encypt(String key, String value) {
+    public static void encrypt(Context context, String key, String value) {
         try {
             keyStore = KeyStore.getInstance(ANDROID_KEY_STORE);
             keyStore.load(null);
@@ -70,7 +68,7 @@ public class KeystoreSecure {
                 Calendar start = Calendar.getInstance();
                 Calendar end = Calendar.getInstance();
                 end.add(Calendar.YEAR, 30);
-                KeyPairGeneratorSpec spec = new KeyPairGeneratorSpec.Builder(mContext)
+                KeyPairGeneratorSpec spec = new KeyPairGeneratorSpec.Builder(context)
                         .setAlias(key)
                         .setSubject(new X500Principal("CN=" + key))
                         .setSerialNumber(BigInteger.TEN)
@@ -88,12 +86,12 @@ public class KeystoreSecure {
         }
     }
 
-    public String decypt(String key) {
+    public static String decrypt(String key) {
         return get(key);
     }
 
 
-    private String get(String key) {
+    private static String get(String key) {
         String encryptedKeyB64 = PrefHelper.getStringVal(key, null);
         byte[] byteKey = new byte[64];
         try {
@@ -106,18 +104,18 @@ public class KeystoreSecure {
         return new String(byteKey);
     }
 
-    private void save(String key, String value) {
+    private static void save(String key, String value) {
         try {
             byte[] secureByte = value.getBytes();
-            byte[] byteKey = rsaEncrypt(secureByte, key);
-            String encryptedKey = Base64.encodeToString(byteKey, Base64.DEFAULT);
+            byte[] byteEncrypted = rsaEncrypt(secureByte, key);
+            String encryptedKey = Base64.encodeToString(byteEncrypted, Base64.DEFAULT);
             PrefHelper.setVal(key, encryptedKey);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private byte[] rsaEncrypt(byte[] secret, String key) throws Exception {
+    private static byte[] rsaEncrypt(byte[] secret, String key) throws Exception {
         KeyStore.PrivateKeyEntry privateKeyEntry = (KeyStore.PrivateKeyEntry) keyStore.getEntry(key, null);
         Cipher inputCipher = Cipher.getInstance(RSA_MODE);
         inputCipher.init(Cipher.ENCRYPT_MODE, privateKeyEntry.getCertificate().getPublicKey());
@@ -130,7 +128,7 @@ public class KeystoreSecure {
         return outputStream.toByteArray();
     }
 
-    private byte[] rsaDecrypt(byte[] encrypted, String key) throws Exception {
+    private static byte[] rsaDecrypt(byte[] encrypted, String key) throws Exception {
         KeyStore.PrivateKeyEntry privateKeyEntry = (KeyStore.PrivateKeyEntry) keyStore.getEntry(key, null);
         Cipher output = Cipher.getInstance(RSA_MODE);
         output.init(Cipher.DECRYPT_MODE, privateKeyEntry.getPrivateKey());
