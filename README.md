@@ -4,6 +4,8 @@
 
 This is an lightweight library for save and get data secure into the Keystore which encrypted and decrypted.
 
+![screenshot](screenshot.png)
+
 ### Add implementation into build.gradle of app level
 
 `
