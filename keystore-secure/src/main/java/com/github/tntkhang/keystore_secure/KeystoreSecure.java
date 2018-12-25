@@ -93,15 +93,13 @@ public class KeystoreSecure {
 
     private static String get(String key) {
         String encryptedKeyB64 = PrefHelper.getStringVal(key, null);
-        byte[] byteKey = new byte[64];
         try {
             byte[] encryptedKey = Base64.decode(encryptedKeyB64, Base64.DEFAULT);
-            byteKey = rsaDecrypt(encryptedKey,  key);
-
+            return new String(rsaDecrypt(encryptedKey, key));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return new String(byteKey);
+        return null;
     }
 
     private static void save(String key, String value) {
