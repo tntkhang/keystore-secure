@@ -7,6 +7,8 @@ This is an lightweight library for save and get data secure into the Keystore wh
 
 [ ![Download](https://api.bintray.com/packages/tntkhang/maven/keystore-secure/images/download.svg?version=1.1.1) ](https://bintray.com/tntkhang/maven/keystore-secure/1.1.1/link)
 
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-keystore--secure-green.svg?style=flat )]( https://android-arsenal.com/details/1/7404 )
+
 ### Add implementation into build.gradle of app level
 
 ```
